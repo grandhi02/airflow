@@ -20,7 +20,7 @@ BYPASS_LATEST_VERSION_CHECK = False
 LINEAGE_BACKEND = "MARQUEZ"
 
 log = logging.getLogger(__name__)
-export AIRFLOW__OPENLINEAGE__TRANSPORT='{"type": "http", "url": "http://10.227.212.54:5000", "endpoint": "api/v1/lineage"}'
+os.environ["AIRFLOW__OPENLINEAGE__TRANSPORT"]='{"type": "http", "url": "http://10.227.212.54:5000", "endpoint": "api/v1/lineage"}'
 
 
 def _get_latest_package_version(library_name: str) -> Version | None:
