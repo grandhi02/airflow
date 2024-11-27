@@ -185,14 +185,15 @@ def _is_ol_disabled():
         from openlineage.airflow.plugin import _is_disabled as is_disabled
 
     if is_disabled():
-        log.info(" in is_disabled method ")
-        log.info(_provider_can_be_used(),conf.getboolean("openlineage", "disabled", fallback=False))
-        log.info(os.getenv("OPENLINEAGE_DISABLED", "false").lower())
-        print(_provider_can_be_used(),conf.getboolean("openlineage", "disabled", fallback=False))
+
 
         for key,value in os.environ.items():
             log.info(f"{key}:{value}")
 
+        log.info(" in is_disabled method ")
+        log.info(_provider_can_be_used(),conf.getboolean("openlineage", "disabled", fallback=False))
+        log.info(os.getenv("OPENLINEAGE_DISABLED", "false").lower())
+        print(_provider_can_be_used(),conf.getboolean("openlineage", "disabled", fallback=False))
         
         if _provider_can_be_used() and conf.getboolean("openlineage", "disabled", fallback=False):
             raise ValueError("OpenLineage is disabled in airflow.cfg: openlineage.disabled")
