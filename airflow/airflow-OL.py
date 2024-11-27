@@ -201,11 +201,6 @@ def _is_ol_disabled():
             raise ValueError(
                 "OpenLineage is disabled due to the environment variable OPENLINEAGE_DISABLED"
             )
-        raise ValueError(
-            "OpenLineage is disabled because required config/env variables are not set. "
-            "Please refer to "
-            "https://airflow.apache.org/docs/apache-airflow-providers-openlineage/stable/guides/user.html"
-        )
     return False
 
 
