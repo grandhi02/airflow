@@ -47,6 +47,7 @@ def _get_installed_package_version(library_name) -> Version | None:
 
 
 def _provider_can_be_used() -> bool:
+    print("in provider check method",Version(airflow_version))
     parsed_version = Version(airflow_version)
     if parsed_version < Version("2.1"):
         raise RuntimeError("OpenLineage is not supported in Airflow versions <2.1")
