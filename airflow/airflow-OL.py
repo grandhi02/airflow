@@ -209,7 +209,9 @@ def _is_ol_disabled():
 
 def _get_transport():
     if _provider_can_be_used():
+        log.info("in transport")
         from airflow.providers.openlineage.plugins.openlineage import OpenLineageProviderPlugin
+        log.info(OpenLineageProviderPlugin().listeners)
         transport = OpenLineageProviderPlugin().listeners[0].adapter.get_or_create_openlineage_client().transport
     else:
         from openlineage.airflow.plugin import OpenLineagePlugin
