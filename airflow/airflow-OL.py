@@ -21,7 +21,7 @@ LINEAGE_BACKEND = "MARQUEZ"
 
 log = logging.getLogger(__name__)
 os.environ["AIRFLOW__OPENLINEAGE__TRANSPORT"]='{"type": "http", "url": "http://10.227.212.54:5000", "endpoint": "api/v1/lineage"}'
-os.environ["AIRFLOW__OPENLINEAGE__DEBUG_MODE"]=True
+os.environ["AIRFLOW__OPENLINEAGE__DEBUG_MODE"]='true'
 
 
 def _get_latest_package_version(library_name: str) -> Version | None:
