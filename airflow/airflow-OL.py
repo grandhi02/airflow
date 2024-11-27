@@ -156,8 +156,11 @@ def _debug_missing_transport():
 
 
 def _is_listener_accessible():
+    log.info("in listener:")
+    log.info(_provider_can_be_used())
     if _provider_can_be_used():
         try:
+            log.info("in try to check listener")
             from airflow.providers.openlineage.plugins.openlineage import OpenLineageProviderPlugin as plugin
         except ImportError as e:
             raise ValueError("OpenLineage provider is not accessible") from e
