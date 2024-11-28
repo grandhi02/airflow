@@ -262,7 +262,7 @@ def _verify_custom_backend(config):
 
 
 with DAG(
-    dag_id="openlineage_preflight_check_dag",
+    dag_id="openlineage_preflight_check_dag2",
     start_date=days_ago(1),
     description="A DAG to check OpenLineage setup and configurations",
     schedule_interval="@once",
