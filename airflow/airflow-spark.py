@@ -23,19 +23,6 @@ dag = DAG(
     "spark_test1",
     default_args=default_args,
     schedule_interval=None,
-    tags=["ezaf", "spark", "pi"],
-    params={
-        "spark_image_url": Param(
-            "gcr.io/mapr-252711/apache-spark:3.5.1-en2",
-            type=["null", "string"],
-            description="Provide Python-Spark image url",
-        ),
-        "spark_image_version": Param(
-            "3.5.1",
-            type=["null", "string"],
-            description="Provide Spark image Version",
-        )
-    },
     render_template_as_native_obj=True,
     access_control={"All": {"can_read", "can_edit", "can_delete"}},
 )
