@@ -1,7 +1,7 @@
 apiVersion: "sparkoperator.hpe.com/v1beta2"
 kind: SparkApplication
 metadata:
-  name: spark-test1
+  name: spark-test-{{ts_nodash|replace("T", "")}}
 spec:
   type: Python
   sparkVersion: 3.5.1
