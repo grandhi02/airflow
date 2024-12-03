@@ -20,7 +20,7 @@ default_args = {
 }
 
 dag = DAG(
-    "spark_pi_oss",
+    "spark_test1",
     default_args=default_args,
     schedule_interval=None,
     tags=["ezaf", "spark", "pi"],
@@ -42,7 +42,7 @@ dag = DAG(
 
 submit = SparkKubernetesOperator(
     task_id="submit",
-    application_file="example_spark_pi_oss.yaml",
+    application_file="airflow_spark.yaml",
     # do_xcom_push=True,
     delete_on_termination=False,
     dag=dag,
