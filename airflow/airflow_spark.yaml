@@ -13,7 +13,7 @@ spec:
   imagePullPolicy: Always
   imagePullSecrets:
   - imagepull
-  mainApplicationFile: "local:///mounts/shared-volume/shared/spark/test2.py"
+  mainApplicationFile: "local:///mounts/shared-volume/shared/spark/test.py"
   restartPolicy:
     type: Never
   driver:
