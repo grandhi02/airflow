@@ -14,7 +14,6 @@ spec:
     deps:
       jars:
         - local:///mounts/shared-volume/shared/spark/openlineage-spark_2.12-1.23.0.jar
-  mainClass: org.apache.spark.examples.SparkPi
   mainApplicationFile: "local:///mounts/shared-volume/shared/spark/test2.py"
   restartPolicy:
     type: Never
