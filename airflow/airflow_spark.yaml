@@ -3,6 +3,9 @@ kind: SparkApplication
 metadata:
   name: spark-test-{{ts_nodash|replace("T", "")}}
 spec:
+  deps:
+    jars:
+      - local:///mounts/shared-volume/shared/spark/openlineage-spark_2.12-1.23.0.jar
   type: Python
   sparkVersion: 3.5.1
   mode: cluster
@@ -10,10 +13,6 @@ spec:
   imagePullPolicy: Always
   imagePullSecrets:
   - imagepull
-  spec:
-    deps:
-      jars:
-        - local:///mounts/shared-volume/shared/spark/openlineage-spark_2.12-1.23.0.jar
   mainApplicationFile: "local:///mounts/shared-volume/shared/spark/test2.py"
   restartPolicy:
     type: Never
